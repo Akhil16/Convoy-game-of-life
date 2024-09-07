@@ -6,7 +6,7 @@ import { GameOfLifeComponent } from './game-of-life/game-of-life.component';
 const routes: Routes = [
   { path: 'tile', component: GameBoardComponent },
   { path: 'life', component: GameOfLifeComponent },
-  { path: '', redirectTo: '/life', pathMatch: 'full' }
+  { path: '**', redirectTo: '/life', pathMatch: 'full' }
 ];
 
 @NgModule({
