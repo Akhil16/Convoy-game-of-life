@@ -1,0 +1,13 @@
+<div class="board">
+  <div *ngFor="let row of board; let y = index">
+    <div *ngFor="let cell of row; let x = index"
+         (click)="onClick(x, y)"
+         [ngClass]="{
+           'cell': true,
+           'candy': cell >= 0,
+           'selected': selected?.x === x && selected?.y === y
+         }">
+      <div *ngIf="cell >= 0" class="tile" [ngStyle]="{'background-color': getCandyColor(cell)}"></div>
+    </div>
+  </div>
+</div>

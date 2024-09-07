@@ -1,0 +1,22 @@
+State: {{state}} <br>
+Generation: {{generation}}
+<div class="buttons">
+  <input type="number" [(ngModel)]="interval" placeholder="Interval">
+  <button class="frosty green" (click)="startGame()">Start</button>
+  <button class="frosty yellow" (click)="pauseGame()">Pause</button>
+  <button class="frosty green" (click)="nextGeneration()">Next</button>
+  <button class="frosty red" (click)="resetGame()">Reset</button>
+  <button class="frosty purple" (click)="randomise()">random</button>
+</div>
+<div class="grid">
+  <div *ngFor="let row of grid; let y = index">
+    <app-tile
+      *ngFor="let cell of row; let x = index"
+      [isAlive]="cell === 1"
+      [row]= x  
+      [column]= y
+      (click)="toggleState(x,y)"
+    >
+    </app-tile>
+  </div>
+</div>

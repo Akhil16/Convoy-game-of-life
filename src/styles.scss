@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #ccc;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: radial-gradient(circle at bottom, #00111b 60%, #000000 100%);
+  overflow: hidden;
+}
+/* The stars layer */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Twinkling stars effect */
+.stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(white, transparent 1%);
+  background-size: 2px 2px;
+  animation: twinkling 200s linear infinite;
+}
+
+@keyframes twinkling {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50px, -50px);
+  }
+}
+
+.main-content {
+  min-height: 60vh; /* Ensure main content takes at least 80% of viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+  padding: 20px;
+  // backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}

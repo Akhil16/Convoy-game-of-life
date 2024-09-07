@@ -1,0 +1,45 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+  gap: 1px;
+  margin: 20px auto;
+  justify-content: center;
+  align-content: center;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.candy {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected {
+  border: 2px solid #ff0;
+}
+
+.tile {
+  width: 50px; /* Tile width */
+  height: 50px; /* Tile height */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.tile:hover {
+  background: rgba(255, 255, 255, 0.4); /* Slightly more opaque on hover */
+}
