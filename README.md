@@ -7,6 +7,8 @@
 
 This project is an Angular implementation of Conway's Game of Life. It uses a grid of cells, where each cell can be either "alive" or "dead." The game follows simple rules to simulate the evolution of cells across generations.
 
+you can try the game here: https://convoy-game-of-life.pages.dev/
+
 ### Features
 
 - A grid where you can toggle the state of each cell.
