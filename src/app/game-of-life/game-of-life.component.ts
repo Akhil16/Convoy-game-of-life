@@ -17,7 +17,7 @@ export class GameOfLifeComponent implements OnInit {
   subscription!: Subscription;
   interval: any = 300;
   isModelOpen: boolean = false;
-  title = "Rules: Convoy's Game Of Life";
+  title = "Rules: Conway's Game Of Life";
   content = `
   Any live cell with two or three live neighbors survives.
   Any dead cell with three live neighbors becomes a live cell.
