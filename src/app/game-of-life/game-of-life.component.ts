@@ -15,10 +15,28 @@ export class GameOfLifeComponent implements OnInit {
   state: 'start' | 'paused' | 'reset' | 'stable' = 'paused';
   generation: number = 0;
   subscription!: Subscription;
-  interval: any = 1000;
+  interval: any = 300;
+  isModelOpen: boolean = false;
+  title = "Rules: Convoy's Game Of Life";
+  content = `
+  Any live cell with two or three live neighbors survives.
+  Any dead cell with three live neighbors becomes a live cell.
+  All other live cells die in the next generation. 
+  Similarly, all other dead cells stay dead.
+ 
+  `
+
 
   ngOnInit() {
     this.grid = this.initialize(this.rows, this.columns);
+  }
+
+  openModal() {
+    this.isModelOpen = true;
+  }
+
+  handleClose() {
+    this.isModelOpen = false;
   }
 
   initialize(rows: number = this.rows, columns: number = this.columns): number[][] {
@@ -82,7 +100,7 @@ export class GameOfLifeComponent implements OnInit {
 
   pauseGame() {
     this.state = 'paused';
-    this.subscription.unsubscribe();
+    this.subscription?.unsubscribe();
   }
 
   randomise() {

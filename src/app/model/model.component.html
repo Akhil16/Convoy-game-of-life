@@ -1,0 +1,9 @@
+<!-- modal.component.html -->
+<div *ngIf="isOpen" class="modal" (click)="onBackgroundClick($event)">
+  <div class="modal-content">
+    <span class="close" (click)="closeModel()">&times;</span>
+    <h2>{{ title }}</h2>
+    <pre>{{ content }}</pre>
+    <ng-content></ng-content> <!-- Allows for projected content -->
+  </div>
+</div>

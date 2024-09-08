@@ -8,11 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { TileComponent } from './tile/tile.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { ModelComponent } from './model/model.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, GameBoardComponent, GameOfLifeComponent, TileComponent, FooterComponent],
+  declarations: [AppComponent, GameBoardComponent, GameOfLifeComponent, TileComponent, FooterComponent, ModelComponent],
   imports: [
     CommonModule,
     BrowserModule,
